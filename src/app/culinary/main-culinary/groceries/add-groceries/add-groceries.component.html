@@ -1,0 +1,29 @@
+<div class="add-goceries-container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h3>Dodaj nowy produkt spożywczy</h3>
+      </div>
+    </div>
+  
+    <form [formGroup]="groceriesForm">
+  
+        <div class="row">
+            <div class="col-md-6 offset-md-3 text-center">
+              <label>Nazwa potrawy</label>
+              <input formControlName="Name" type="text"/>
+              <p *ngIf="!groceriesForm.get('Name').valid && groceriesForm.get('Name').dirty">To pole jest wymagane i może mieć maksymalnie 10 znaków !</p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-3 offset-md-3 text-center">
+              <button [disabled]="" (click)="addGroceries()">Dddaj potrawę</button>
+            </div>
+            <div class="col-md-3">
+                <button (click)="closeThis()">Anuluj</button>
+            </div>
+          </div>
+  
+    </form>
+    <pre> {{ groceriesForm.value | json }} </pre>
+  </div>

@@ -1,0 +1,42 @@
+<div class="container" [ngClass]="mainView">
+  <div class="row mini-bar">
+    <div class="col-md-8">
+      <ul>
+        <li (click)="showAddDish()">Dodaj nową potrawę</li>
+        <li>Usun potrawę</li>
+      </ul>
+    </div>
+    <div class="col-md-4">
+      <div class="float-right">
+          szukaj...  <input [(ngModel)]="searchText"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="row>">
+    <div class="col-sm-12">
+      <table class="table  table-striped">
+        <thead>
+          <tr>
+            <th class="col-md-3">Lp</th>
+            <th class="col-md-3">GID</th>
+            <th class="col-md-3">Nazwa</th>
+            <th class="col-md-3">Opis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dish of dishes | filter : searchText; let i = index" (click)="GoToDishDetails(dish)">
+            <td class="col-md-3">{{ i + 1 }}</td>
+            <td class="col-md-3">{{ dish?.GID }}</td>
+            <td class="col-md-3">{{ dish?.Name }}</td>
+            <td class="col-md-3">{{ dish?.Description }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container" [ngClass]="addDish">
+  <add-dish (viewAddDish)="showDishesList()"></add-dish>
+</div>

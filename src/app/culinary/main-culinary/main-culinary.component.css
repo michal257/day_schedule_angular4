@@ -1,0 +1,45 @@
+.culinary-main-list
+{
+    height: 100vh;
+    -webkit-transition: width 2s;
+    transition: width 2s, justify-content 2s, background-color 1s, border-right 3s;
+}
+
+.culinary-main-list-big
+{
+    text-align: center;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+}
+
+.culinary-main-list-small
+{
+    width: 9%;
+    background-color: #dddddd;
+    display: block;
+    justify-content: flex-start;
+    font-size: 12px;
+    float: left;
+    border-right: 1px solid black;
+}
+
+ul{
+    list-style-type: none;
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+}
+li{
+    width: 100%;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+.rightContainer
+{
+    float: left;
+    border: solid black 1px;
+    width: 89%;
+    height: 100vh;
+}

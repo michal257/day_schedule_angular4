@@ -1,0 +1,16 @@
+<div class="culinary-main-list" [ngClass]="mainView ? 'culinary-main-list-big' : 'culinary-main-list-small'">
+  <div class="align-self-center">
+    <ul>
+        <li (click)="openDishesList()">Lista potraw</li>
+        <li (click)="openGroceries()">Lista produktów spożywczych</li>
+        <li *ngIf="!mainView" (click)="clearMainCulinaryContent()">Powrót -></li>
+    </ul>
+  </div>
+</div>
+
+<div [ngClass]="!mainView ? 'rightContainer' : '' ">
+    <groceries *ngIf="groceriesList"></groceries>
+    <dishes-list *ngIf="dishesList" (shownDishDetails)="openDishDetails($event)"></dishes-list>
+    <dish-details [dish]="selectDish" *ngIf="selectDish" (viewDishDetails)="openDishesList($event)"></dish-details>
+</div>
+

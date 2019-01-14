@@ -1,0 +1,42 @@
+<div class="container" [ngClass]="thisView">
+
+    <div class="row mini-bar">
+        <div class="col-md-8">
+          <ul>
+            <li (click)="showAddGroceries()">Dodaj produkt spożywczy</li>
+            <li>Usun produkt</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <div class="float-right">
+              szukaj...  <input [(ngModel)]="searchText"/>
+          </div>
+        </div>
+      </div>
+
+  <div class="row>">
+    <div class="col-sm-12">
+      <table class="table  table-striped">
+        <thead>
+          <tr>
+            <th class="col-md-4">Lp</th>
+            <th class="col-md-4">GID</th>
+            <th class="col-md-4">Nazwa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let grocerie of groceries | filterGroceries : searchText; let i = index">
+            <td class="col-md-4">{{ i }}</td>
+            <td class="col-md-4">{{ grocerie?.GID }}</td>
+            <td class="col-md-4">{{ grocerie?.Name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="container" [ngClass]="addGroceries">
+  <add-groceries (viewAddGroceries)="showGroceriesList()"></add-groceries>
+</div>
+

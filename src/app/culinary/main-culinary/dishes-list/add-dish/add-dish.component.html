@@ -1,0 +1,37 @@
+<div class="add-dish-container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>Dodaj nową potrawę</h3>
+    </div>
+  </div>
+
+  <form [formGroup]="dishForm">
+
+      <div class="row">
+          <div class="col-md-6 text-center">
+            <label>Nazwa potrawy</label>
+            <input formControlName="Name" type="text"/>
+            <p *ngIf="!dishForm.get('Name').valid && dishForm.get('Name').dirty">To pole jest wymagane i może mieć maksymalnie 10 znaków !</p>
+          </div>
+          <div class="col-md-6 text-center">
+              <label>Opis potrawy</label>
+              <input formControlName="Description" type="text"/>
+              <p *ngIf="!dishForm.get('Description').valid">To pole może mieć maksymalnie 10 znaków !</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-3 offset-md-6 text-center">
+            <button [disabled]="dishForm.invalid" (click)="addDish()">Dddaj potrawę</button>
+          </div>
+          <div class="col-md-3">
+              <button (click)="closeThis()">Anuluj</button>
+          </div>
+        </div>
+
+  </form>
+  
+</div>
+
+
+

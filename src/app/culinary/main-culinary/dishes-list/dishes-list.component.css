@@ -1,0 +1,27 @@
+.table td {
+    text-align: center;   
+ }
+ .table th{
+     text-align: center;
+ }
+
+ .table td:last-child {
+     font-size: 0.8em;
+ }
+ .table tr {
+     cursor: pointer;
+ }
+
+ .mini-bar{
+     margin: 20px 0 15px 0;
+ }
+
+ .mini-bar li{
+     display: inline-block;
+     cursor: pointer;
+     margin-right: 10px;
+ }
+ .mini-bar li:hover{
+     color:  rgb(13, 228, 13);
+ }
+

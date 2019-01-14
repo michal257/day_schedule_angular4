@@ -1,0 +1,40 @@
+.sidebar
+{
+    background-color: rgb(4, 179, 4);
+    color: white;
+    padding: 10px;
+}
+.sidebar:hover
+{
+    padding: 15px;
+}
+
+.sidebar:hover  li
+{
+    font-size: 1.1em;
+    color: rgb(13, 228, 13);
+}
+
+li
+{
+    display: inline-block;
+    cursor: pointer;
+    
+    margin-right: 10px;
+    
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+li:last-child{
+    margin-right:30px;
+}
+.active
+{
+    color: red;
+}
+
+
+ul{
+    margin-bottom: 0;
+}
